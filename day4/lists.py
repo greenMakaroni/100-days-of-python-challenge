@@ -22,3 +22,6 @@ print("\n List of fruit: ", list_of_fruit)
 print("\n List of vegetables: ", list_of_vegetables)
 print("\n Nested lists", fruits_and_vegetables)
 
+list_of_vegetables[-1] = "Tomato"
+print(list_of_vegetables)
+
