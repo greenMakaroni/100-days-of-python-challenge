@@ -43,16 +43,12 @@ print("\n Computer choice: \n", computerChoice)
 
 if userChoice == computerChoice:
     print("DRAW")
-elif userChoice == rock and computerChoice == paper:
-    print("Computer wins")
 elif userChoice == rock and computerChoice == scissors:
     print("You win")
 elif userChoice == paper and computerChoice == rock:
     print("You win")
-elif userChoice == paper and computerChoice == scissors:
-    print("Computer wins")
-elif userChoice == scissors and computerChoice == rock:
-    print("Computer wins")
 elif userChoice == scissors and computerChoice == paper:
     print("You win")
+else:
+    print("Computer wins")
 
