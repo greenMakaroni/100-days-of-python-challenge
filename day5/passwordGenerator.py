@@ -31,19 +31,18 @@ print("Easy password: ", password)
 choice = []
 randomized_password = ""
 
-for letter in range(0, nr_letters):
+for letter in range(1, nr_letters + 1):
     choice.append(random.choice(letters)) 
 
-for symbol in range(0, nr_symbols):
+for symbol in range(1, nr_letters + 1):
     choice.append(random.choice(symbols))
 
-for number in range(0, nr_numbers):
+for number in range(1, nr_letters + 1):
     choice.append(random.choice(numbers))
 
+random.shuffle(choice)
 for character in choice:
-    random_character = random.choice(choice)
-    randomized_password = randomized_password + random_character
-    choice.remove(random_character)
+    randomized_password += character
 
 print("Randomized password: ", randomized_password)
 
