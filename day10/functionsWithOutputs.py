@@ -3,3 +3,8 @@ def format_name(f_name, l_name):
     
 
 print(format_name("dAwId", "marKieton"))
+
+def returnZero():
+    return
+
+print(type(returnZero()))
