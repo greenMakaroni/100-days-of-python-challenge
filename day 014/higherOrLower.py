@@ -11,8 +11,6 @@ def printSubjectsToCompare(first, second):
         print(vs)
         print(f"Against: {second['name']}, {second['description']}\n")
 
-
-
 def game():
     score = 0
     alive = True
@@ -20,7 +18,7 @@ def game():
     compare_second = random.choice(data)
     while compare_first == compare_second:
         compare_second = random.choice(data)
-        
+
     while alive:
         print(f"Your score is: {score}")
         printSubjectsToCompare(first=compare_first, second=compare_second)
