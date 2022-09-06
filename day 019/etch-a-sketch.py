@@ -7,16 +7,16 @@ screen = Screen()
 screen.listen()
 
 def moveForwards():
-    timmy.forward(10)
+    timmy.forward(20)
 
 def moveBackwards():
     timmy.backward(10)
 
 def rotateClockwise():
-    timmy.right(5)
+    timmy.right(20)
 
 def rotateAnticlockwise():
-    timmy.left(5)
+    timmy.left(20)
 
 def clearDrawing():
     timmy.reset()
