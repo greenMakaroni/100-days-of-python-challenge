@@ -1,6 +1,10 @@
 # Classic snake game challenge
 from turtle import Turtle
 starting_positions=[(0, 0), (-20, 0), (-40, 0)]
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
 
@@ -29,9 +33,19 @@ class Snake:
             self.segments[segment_number].goto(new_x, new_y)
         self.segments[0].forward(20)
 
-    def turn_right(self):
-        self.segments[0].right(90)
+    def up(self):
+        if self.segments[0].heading() != DOWN:
+            self.segments[0].setheading(UP)
 
-    def turn_left(self):
-        self.segments[0].left(90)
+    def down(self):
+        if self.segments[0].heading() != UP:
+            self.segments[0].setheading(DOWN)
+
+    def left(self):
+        if self.segments[0].heading() != RIGHT:
+            self.segments[0].setheading(LEFT)
+
+    def right(self):
+        if self.segments[0].heading() != LEFT:
+            self.segments[0].setheading(RIGHT)
 
