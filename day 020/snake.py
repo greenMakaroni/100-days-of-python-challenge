@@ -1,25 +1,37 @@
 # Classic snake game challenge
-from turtle import Screen, Turtle
+from turtle import Turtle
+starting_positions=[(0, 0), (-20, 0), (-40, 0)]
 
-screen = Screen()
-screen.setup(width=600, height=600)
-screen.bgcolor("black")
-screen.title("Snake")
+class Snake:
 
+    def __init__(self):
+        self.snakeLength = 3
+        self.segments = []
+        self.xpos = 0
+        self.ypos = 0
+        self.draw_snek()
 
-snakeLength = 3
-xpos = 0
-ypos = 0
+    def draw_snek(self):
+        for position in starting_positions:
+            segment = Turtle("square")
+            segment.penup()
+            segment.color("white")
+            segment.goto(position)
+            self.segments.append(segment)
 
-def snakeBody(x, y, length):
-    global snakeLength
+            self.xpos -= 20
+            self.segments.append(segment)
 
-    for _ in range(length):
-        segment = Turtle("square")
-        segment.color("white")
-        segment.setpos(x, y)
-        x -= 20
+    def move(self):
+        for segment_number in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments[segment_number - 1].xcor()
+            new_y = self.segments[segment_number - 1].ycor()
+            self.segments[segment_number].goto(new_x, new_y)
+        self.segments[0].forward(20)
 
-snakeBody(x=xpos, y=ypos, length=snakeLength)
+    def turn_right(self):
+        self.segments[0].right(90)
 
-screen.exitonclick()
+    def turn_left(self):
+        self.segments[0].left(90)
+
