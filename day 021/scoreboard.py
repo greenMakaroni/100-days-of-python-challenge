@@ -14,6 +14,10 @@ class Scoreboard(Turtle):
         self.clear()
         self.write(arg=f"Score: {score}", move=False, align="center", font=('arial black', '22', 'normal'))
 
+    def drawGameOver(self):
+        self.goto(0,0)
+        self.write(arg="GAME OVER", move=False, align="center", font=('arial black', '22', 'normal'))
+
 
 
         

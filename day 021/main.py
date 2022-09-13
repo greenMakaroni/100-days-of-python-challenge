@@ -38,10 +38,18 @@ def detect_collision():
         food.resetSnek()
         score += 1
         scoreboard.updateScoreboard(score)
+        snake.extend()
     
     # walls collision detection
     if snake.segments[0].xcor() > 290 or snake.segments[0].xcor() < -290 or snake.segments[0].ycor() > 290 or snake.segments[0].ycor() < -290:
         game_is_on = False
+        scoreboard.drawGameOver()
+
+    # tail collision detection
+    for segment in snake.segments[1::]:
+        if snake.segments[0].position() == segment.position():
+            game_is_on = False
+            scoreboard.drawGameOver()
 
 # Game loop
 while game_is_on:
@@ -49,7 +57,6 @@ while game_is_on:
     time.sleep(0.05)
 
     snake.move()
-
     # detect collisions with food
     detect_collision()
 
