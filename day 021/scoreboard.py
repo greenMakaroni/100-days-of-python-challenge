@@ -8,11 +8,11 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.color("white")
         self.goto(0, 250)
-        self.write("Score: 0", False, align="center", font=('arial black', '22', 'normal'))
+        self.write(arg="Score: 0", move=False, align="center", font=('arial black', '22', 'normal'))
 
     def updateScoreboard(self, score):
         self.clear()
-        self.write(f"Score: {score}", False, align="center", font=('arial black', '22', 'normal'))
+        self.write(arg=f"Score: {score}", move=False, align="center", font=('arial black', '22', 'normal'))
 
 
 
