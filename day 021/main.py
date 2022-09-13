@@ -46,7 +46,7 @@ def detect_collision():
         scoreboard.drawGameOver()
 
     # tail collision detection
-    for segment in snake.segments[1::]:
+    for segment in snake.segments[1:]:
         if snake.segments[0].position() == segment.position():
             game_is_on = False
             scoreboard.drawGameOver()
