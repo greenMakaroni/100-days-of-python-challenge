@@ -12,4 +12,7 @@ class Food(Turtle):
         self.color("yellow")
         self.speed("fastest")
         self.goto(x=random.randint(-250, 250), y=random.randint(-250, 250))
+    
+    def resetSnek(self):
+        self.goto(x=random.randint(-250, 250), y=random.randint(-250, 250))
        
