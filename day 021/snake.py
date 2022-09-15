@@ -19,7 +19,6 @@ class Snake:
         for position in starting_positions:
             self.add_segment(position)
 
-
     def add_segment(self, position):
         segment = Turtle("square")
         segment.penup()
@@ -29,7 +28,6 @@ class Snake:
 
     def extend(self):
         self.add_segment(self.segments[-1].position())
-
 
     def move(self):
         for segment_number in range(len(self.segments) - 1, 0, -1):
