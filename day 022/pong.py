@@ -1,6 +1,8 @@
 from turtle import Screen, right 
 from paddle import Paddle
 from ball import Ball
+from score import Score
+from line import Line
 import time
 
 # Screen setup
@@ -15,6 +17,10 @@ screen.listen()
 rightPaddle = Paddle(350)
 leftPaddle = Paddle(-350)
 ball = Ball()
+line = Line()
+
+rightScore = Score(100)
+leftScore = Score(-100)
 # Event handlers
 
 # Right paddle
@@ -51,15 +57,13 @@ def detectCollision():
 
     if ball.xcor() > 400:
         scoreLeft += 1
+        leftScore.updateScore(scoreLeft)
         ball.reset()
-        print(scoreLeft, scoreRight)
     
     if ball.xcor() < -400:
         scoreRight += 1
+        rightScore.updateScore(scoreRight)
         ball.reset()
-        print(scoreLeft, scoreRight)
-
-   
 
 while game_is_on:
     screen.update()
