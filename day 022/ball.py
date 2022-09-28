@@ -1,14 +1,5 @@
 from turtle import Turtle 
 
-LEFT = 180
-TOP_LEFT = 135
-BOTTOM_LEFT = 225
-
-RIGHT = 0
-TOP_RIGHT = 45
-BOTTOM_RIGHT = 315
-
-
 class Ball(Turtle):
 
     def __init__(self):
