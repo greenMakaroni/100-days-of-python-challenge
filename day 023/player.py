@@ -10,8 +10,18 @@ class Player(Turtle):
         self.penup()
         self.shape("turtle")
         self.color("black")
-        self.goto(0, -280)
+        self.goto(STARTING_POSITION)
         self.setheading(90)
+        self.score = 1
 
     def move(self):
-        self.forward(20)
+        self.forward(MOVE_DISTANCE)
+
+    def levelUp(self):
+        self.goto(STARTING_POSITION)
+        self.score += 1
+
+    def stopPlayer(self):
+        global MOVE_DISTANCE
+        MOVE_DISTANCE = 0
+        

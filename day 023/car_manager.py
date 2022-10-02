@@ -1,28 +1,24 @@
 from car import Car
-import random
-
-COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
-STARTING_MOVE_DISTANCE = 15
-MOVE_INCREMENT = 10
-
 
 class CarManager:
 
     def __init__(self):
-        self.waves = []
-        self.car_y = 280
+        self.cars = []
         
-    def spawnWave(self):
-        cars = []
-        while self.car_y > -280:
-            car = Car(random.choice(COLORS), self.car_y)
-            cars.append(car)
-            self.car_y -= 40
-        self.car_y = 280
-        self.waves.append(cars)
+    def spawnCar(self):
+        car = Car()
+        self.cars.append(car)
 
     def moveCars(self):
-        for wave in self.waves:
-            for car in wave:
-                car.move()
+        for car in self.cars:   
+            car.move()
+
+    def levelUp(self):
+         for car in self.cars:   
+            car.setSpeed(car.getSpeed() + 5)
+
+    def stopCars(self):
+        for car in self.cars:
+            car.setSpeed(0)
+
              
