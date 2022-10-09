@@ -56,5 +56,3 @@ class Snake:
         self.segments.clear()
         self.draw_snek()
 
-
-
