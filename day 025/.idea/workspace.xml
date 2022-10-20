@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35a3949c-bd31-4282-a7c4-baa1ce4fc2b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/squirrel_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pandas_fun.py" beforeDir="false" afterPath="$PROJECT_DIR$/pandas_fun.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
