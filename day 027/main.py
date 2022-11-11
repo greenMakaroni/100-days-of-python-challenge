@@ -6,20 +6,23 @@ window = tkinter.Tk()
 window.title("My first tkinter GUI")
 window.minsize(width=500, height=300)
 
+# event callback
+def button_clicked():
+    label.config(text=input.get())
+
+#LABEL
 # create component - Label
 label = tkinter.Label(text="I am a Label", font=("Arial", 24, "italic bold"))
 # display component on the screen
 label.pack()
 
-# event callback
-def button_clicked():
-    label.config(text=input.get())
 
+# BUTTON
 # only method name, don't call the method
 button = tkinter.Button(text="Click Me", command=button_clicked)
 button.pack()
 
-# input field
+# INPUT
 # input.get() returns input text as string
 # empty text field = input.get() returning empty string
 input = tkinter.Entry()
