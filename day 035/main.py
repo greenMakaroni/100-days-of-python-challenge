@@ -1,7 +1,15 @@
+import os
+from twilio.rest import Client
+from twilio.http.http_client import TwilioHttpClient
 import requests
 
 OWM_CALL = "https://api.openweathermap.org/data/2.5/weather"
 
+# twilio sms api vars
+account_sid = 'lel'
+auth_token = 'my auth token :D' # I'm not pushing any of those on github, sorry scrapers.
+
+# weather map vars
 api_key = "haha nope"
 lat = 52.520008
 long = 13.404954
@@ -9,12 +17,12 @@ long = 13.404954
 call_params = {
     "lat": lat,
     "lon": long,
-    "exclused": "current,minutely,daily",
+    "excluded": "current,minutely,daily",
     "appid": api_key
 }
 
+# Call weathermap api
 will_rain = False
-
 response = requests.get(OWM_CALL, params=call_params)
 response.raise_for_status()
 weather_data = response.json()
@@ -26,5 +34,10 @@ for hourly_data in weather_data:
         will_rain = True
 
 if will_rain:
-    print("Bring umbrella")
+    # call twilio api
+    proxy_client = TwilioHttpClient()
+    proxy_client.session.proxies = {'https': os.environ['https_proxy']}
 
+    client = Client(account_sid, auth_token, http_client=proxy_client)
+
+    message = client.messages.create(body="Take umbrella", from_="+987654321", to="+123456789")
