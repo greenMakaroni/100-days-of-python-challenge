@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 USERNAME = "greenmakaroni"
 TOKEN = "hehe"
@@ -12,8 +13,12 @@ request_header = {
     "X-USER-TOKEN": TOKEN,
 }
 
+# automate getting today's date
+today = datetime.now()
+
 request_body = {
-    "date": "20221231",
+    # formatted as pixela api specified.
+    "date": today.strftime("%Y%m%d"),
     "quantity": "3",
 }
 
