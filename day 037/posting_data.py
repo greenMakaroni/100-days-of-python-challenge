@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 
 USERNAME = "greenmakaroni"
-TOKEN = "hehe"
+TOKEN = "nope"
 GRAPH_ID = "graph1"
 
 pixela_endpoint = "https://pixe.la/v1/users"
@@ -18,8 +18,8 @@ today = datetime.now()
 
 request_body = {
     # formatted as pixela api specified.
-    "date": today.strftime("%Y%m%d"),
-    "quantity": "3",
+    "date": "20221230",
+    "quantity": "30",
 }
 
 response = requests.post(url=create_graph_endpoint, json=request_body, headers=request_header)
